@@ -21,7 +21,18 @@ function addEmployee() {
         title: $('#title').val(),
         annualSalary: $('#annualSalary').val(),
     }
+
+    console.log(employee.firstName, employee.lastName);
+    
     //takes info from inputs an employee object
+    $('.input').val('');
+    //clears the inputs
+
+    $('#container').append(`
+        <p>${employee.firstName}</p>
+
+    `)
     console.log(employee);
     
 }//end addEmployee
+
