@@ -7,9 +7,11 @@ function readyNow(){
     console.log('jquery loaded');
 
     $('#submit').on('click', addEmployee);
+    //listens for submit button click and starts addEmployee function
 }
 
 function addEmployee() {
+    //start addEmployee function
     console.log('addEmployee click');
     
     let employee = {
@@ -19,7 +21,7 @@ function addEmployee() {
         title: $('#title').val(),
         annualSalary: $('#annualSalary').val(),
     }
-
+    //takes info from inputs an employee object
     console.log(employee);
     
-}
+}//end addEmployee
