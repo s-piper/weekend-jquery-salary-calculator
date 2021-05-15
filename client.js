@@ -28,10 +28,14 @@ function addEmployee() {
     $('.input').val('');
     //clears the inputs
 
-    $('#container').append(`
-        <p>${employee.firstName}</p>
+    let newRow = `<tr><td>${employee.firstName}</td><td>${employee.lastName}</td>
+        <td>${employee.id}</td><td>${employee.title}</td><td style="text-align:right">${employee.annualSalary} </tr>`;
+        //creates new row pulling info from employee object
+    let tableBody = $('table tbody');
 
-    `)
+    tableBody.append(newRow);
+        //adds new row to DOM
+    
     console.log(employee);
     
 }//end addEmployee
