@@ -68,6 +68,7 @@ function deleteEmployee() {
 
 let salaryArray = [];
 let annual = 0;
+let monthly = 0
 // console.log(salaryArray.reduce((a, b) => a + b, 0));
 
 
@@ -78,7 +79,12 @@ function total() {// total function start
     }//converts the array from strings to numbers
     console.log(salaryArray.reduce((a, b) => a + b, 0));
    annual = salaryArray.reduce((a, b) => a + b, 0);
-   $('#total').text(`Total Monthly:$${annual}`);
-
-
+   //adds array values
+   monthly = parseInt(annual/12);
+   //breaks it down to monthly
+   if (monthly>20000) {
+       $('#total').addClass('warning');
+   }
+   $('#total').text(`Total Monthly:$${monthly}`);
+   //adds to DOM
 }//total function end
