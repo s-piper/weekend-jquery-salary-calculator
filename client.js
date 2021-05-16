@@ -115,7 +115,12 @@ function total() {// total function start
    //breaks it down to monthly
    if (monthly>20000) {
        $('#total').addClass('warning');
-   }
+    }
+    if (monthly<20000) {
+       $('#total').removeClass('warning');
+   }   
+
+
    $('#total').text(`Total Monthly:$${monthly.toLocaleString({
         minimumFractionDigits:2,
         maximumFractionDigits:2,

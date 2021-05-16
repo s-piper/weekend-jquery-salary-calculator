@@ -1,6 +1,8 @@
 .warning{
+    display: table;
     background-color: red;
 }
+
 
 body{
     background-color: seashell;
@@ -29,7 +31,11 @@ main{
 
 }
 
-.monthTotal{
+.table{
+    width: 78%;
+}
 
-    
+.monthTotal{
+    margin-left: 47%;
+    font-size: 23px;
 }
