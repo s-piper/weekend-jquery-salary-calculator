@@ -36,9 +36,18 @@ function addEmployee() {
     $('.input').val('');
     //clears the inputs
 
-    let newRow = `<tr><td>${employee.firstName}</td><td>${employee.lastName}</td>
-        <td>${employee.id}</td><td>${employee.title}</td><td class="empSal" style="text-align:right">$${employee.annualSalary}
-        <td style="text-align:center"><button class="btn btn-outline-danger btn-sm" id="delete">Delete</button></td>  </tr>`;
+    // let salObj = employee.annualSalary;
+
+    let newRow = `<tr class = "employee">
+        <td>${employee.firstName}</td>
+        <td>${employee.lastName}</td>
+        <td>${employee.id}</td>
+        <td>${employee.title}</td>
+        <td class = "delSal" style="text-align:right">${employee.annualSalary.toLocaleString({
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        })}</td>
+        <td style="text-align:center"><button class="btn btn-outline-danger btn-sm" id="delete">Delete</button></td> </tr>`;
     //creates new row pulling info from employee object
     //also makes the delete button
     let tableBody = $('table tbody');
@@ -59,12 +68,33 @@ function addEmployee() {
 }//end addEmployee
 
 
+
+// let delSal = {};
 function deleteEmployee() {
     console.log('delete click');
     
-
+    let subSal = Number($(this).closest(`.employee`).children('.delSal').text());
+    //pulls the data from html
+    console.log(subSal);
+    let index = salaryArray.indexOf(subSal);
+    salaryArray.splice(index, 1);
+    //finds index and removes it from the salaryArray
+    console.log(index);
+    
+  
+    // deleteSalary(subSal);
     $(this).closest(`tr`).remove();
+    // console.log(`check` .JSON.stringify(salObj));
+    total();
+    //reruns total function
 }//deletes row
+
+// // function deleteSalary() {
+//     let index = salaryArray.indexOf(subSal);
+//         if (index > -1){
+//             salaryArray.splice(index, 1);
+//         }
+// }
 
 
 let salaryArray = [];
@@ -86,6 +116,10 @@ function total() {// total function start
    if (monthly>20000) {
        $('#total').addClass('warning');
    }
-   $('#total').text(`Total Monthly:$${monthly}`);
+   $('#total').text(`Total Monthly:$${monthly.toLocaleString({
+        minimumFractionDigits:2,
+        maximumFractionDigits:2,
+    })}`);
+//    $('#total').text(`Total Monthly: ${monthly}`).toLocaleString();
    //adds to DOM
 }//total function end
