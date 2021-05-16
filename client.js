@@ -9,7 +9,7 @@ function readyNow() {
     $('#submit').on('click', addEmployee);
     //listens for submit button click and starts addEmployee function
 
-    $('.table').on('click', '.delete', deleteEmployee)
+    $('.table').on('click', '#delete', deleteEmployee)
     //dynamic listener for delete button click on table
 
 }
@@ -37,8 +37,8 @@ function addEmployee() {
     //clears the inputs
 
     let newRow = `<tr><td>${employee.firstName}</td><td>${employee.lastName}</td>
-        <td>${employee.id}</td><td>${employee.title}</td><td style="text-align:right">$${employee.annualSalary}
-        <td style="text-align:center"><button class="delete">Delete</button></td>  </tr>`;
+        <td>${employee.id}</td><td>${employee.title}</td><td class="empSal" style="text-align:right">$${employee.annualSalary}
+        <td style="text-align:center"><button class="btn btn-danger" id="delete">Delete</button></td>  </tr>`;
     //creates new row pulling info from employee object
     //also makes the delete button
     let tableBody = $('table tbody');
@@ -61,6 +61,7 @@ function addEmployee() {
 
 function deleteEmployee() {
     console.log('delete click');
+    
 
     $(this).closest(`tr`).remove();
 }//deletes row
