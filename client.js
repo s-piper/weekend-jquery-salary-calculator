@@ -38,7 +38,7 @@ function addEmployee() {
 
     let newRow = `<tr><td>${employee.firstName}</td><td>${employee.lastName}</td>
         <td>${employee.id}</td><td>${employee.title}</td><td class="empSal" style="text-align:right">$${employee.annualSalary}
-        <td style="text-align:center"><button class="btn btn-danger" id="delete">Delete</button></td>  </tr>`;
+        <td style="text-align:center"><button class="btn btn-outline-danger btn-sm" id="delete">Delete</button></td>  </tr>`;
     //creates new row pulling info from employee object
     //also makes the delete button
     let tableBody = $('table tbody');

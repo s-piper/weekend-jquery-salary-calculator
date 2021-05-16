@@ -2,6 +2,34 @@
     background-color: red;
 }
 
-.delete{
+body{
+    background-color: seashell;
+    font-family:Arial, Helvetica, sans-serif ;
+    color:rgb(179, 133, 133) ;
+}
+
+section{
+    width: auto;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    
+}
+
+main{
+    margin-left: 15px;
+}
+
+.title{
+    text-align: center;
+    width: 100%;
+    font-size: 55px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: seashell;
+    background-color: rgb(226, 186, 186);
+
+}
+
+.monthTotal{
+
     
 }

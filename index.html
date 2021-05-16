@@ -21,7 +21,7 @@
 <body>
 
     <header>
-        <h1>Salary Calculator</h1>
+        <h1 class="title">Salary Calculator</h1>
 
     </header>
 
@@ -33,14 +33,14 @@
         <input class="input" id="title" type="text" placeholder="Title" ></input>
         <input class="input" id="annualSalary" type="number" placeholder="Annual Salary" ></input>
 
-        <button id="submit">Submit</button> 
+        <button id="submit" class="btn btn-outline-success btn-sm">Submit</button> 
     
     </section>
     
     <main>
         <h3>Employees</h3>
         <container>
-            <table class="table" style="width: auto;">
+            <table class="table table-striped table-hover table-bordered" style="width: auto;">
                 <thead>
                     <tr>
                         <th>First Name</th>
@@ -69,7 +69,7 @@
 
 
     </main>
-    <footer id="total" >Total Monthly:</footer>
+    <footer class="monthTotal" id="total" >Total Monthly:</footer>
 
 
 </body>
